@@ -20,7 +20,7 @@ public class Modelo {
     
     public Modelo() {
         
-        fcnew Termometro().setVisible(true);
+        new VistaPrincipal().setVisible(true);
     }
 
     public Cliente getAppCliente() {
