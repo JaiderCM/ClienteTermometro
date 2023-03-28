@@ -96,8 +96,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        Termometro termometro = new Termometro();
         this.setVisible(false);
-        new Termometro().setVisible(true);
+        termometro.setValues(Integer.parseInt(txtIntervaloMenor.getText()),Integer.parseInt(txtIntervaloMayor.getText()));
+        termometro.setVisible(true);
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**

@@ -4,6 +4,8 @@
  */
 package presentacion;
 
+import javax.swing.SwingConstants;
+
 /**
  *
  * @author secar
@@ -16,6 +18,12 @@ public class Termometro extends javax.swing.JFrame {
     public Termometro() {
         initComponents();
     }
+    
+    public void setValues(int min, int max){
+        SliderTermometro.setMinimum(min);
+        SliderTermometro.setMaximum(max);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,18 +35,18 @@ public class Termometro extends javax.swing.JFrame {
     private void initComponents() {
 
         jSlider1 = new javax.swing.JSlider();
-        jSDeslizador = new javax.swing.JSlider();
+        SliderTermometro = new javax.swing.JSlider();
         jLmostrarValor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jSDeslizador.setMajorTickSpacing(10);
-        jSDeslizador.setOrientation(javax.swing.JSlider.VERTICAL);
-        jSDeslizador.setPaintLabels(true);
-        jSDeslizador.setValue(0);
-        jSDeslizador.addChangeListener(new javax.swing.event.ChangeListener() {
+        SliderTermometro.setMajorTickSpacing(10);
+        SliderTermometro.setOrientation(javax.swing.JSlider.VERTICAL);
+        SliderTermometro.setPaintLabels(true);
+        SliderTermometro.setValue(0);
+        SliderTermometro.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSDeslizadorStateChanged(evt);
+                SliderTermometroStateChanged(evt);
             }
         });
 
@@ -48,7 +56,7 @@ public class Termometro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSDeslizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SliderTermometro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(179, 179, 179))
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
@@ -59,7 +67,7 @@ public class Termometro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addComponent(jSDeslizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SliderTermometro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLmostrarValor, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -68,9 +76,9 @@ public class Termometro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jSDeslizadorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSDeslizadorStateChanged
-        jLmostrarValor.setText("La temperatura es: " + jSDeslizador.getValue() + "° grados Centigrados");
-    }//GEN-LAST:event_jSDeslizadorStateChanged
+    private void SliderTermometroStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SliderTermometroStateChanged
+        jLmostrarValor.setText("La temperatura es: " + SliderTermometro.getValue() + "° grados Centigrados");       
+    }//GEN-LAST:event_SliderTermometroStateChanged
 
     /**
      * @param args the command line arguments
@@ -108,8 +116,8 @@ public class Termometro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSlider SliderTermometro;
     private javax.swing.JLabel jLmostrarValor;
-    private javax.swing.JSlider jSDeslizador;
     private javax.swing.JSlider jSlider1;
     // End of variables declaration//GEN-END:variables
 }
